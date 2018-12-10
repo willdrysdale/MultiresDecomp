@@ -33,9 +33,6 @@ multi_res_decomp = function(df,col1,col2 = NULL,time_res = 0.2,inc_w_n = F){
   time_res = mapped$res
   M = mapped$M
   
-  if(!is.null(d2)) # if calculating cospectra
-    d2 = d2[1:(2^M)]
-  
   m = M:0 #m counts backwards through the stages from M to 0
   mr_spectra = vector("double",length(m))
   w_n_all = list()
@@ -43,10 +40,12 @@ multi_res_decomp = function(df,col1,col2 = NULL,time_res = 0.2,inc_w_n = F){
     #data must first be split into 2^(i-1)
     d_seg = n_segs(d,i)
     w_n = purrr::map_dbl(d_seg,mean,na.rm = T) # n segment means as vector
-    if(!is.null(d2)){# if calculating cospectra
+    
+    if(!is.null(col2)){# if calculating cospectra
       d2_seg = n_segs(d2,i)
       psi_n = purrr::map_dbl(d2_seg,mean,na.rm = T)
       D_w = smam(w_n,M,m[i+1],psi_n)
+      
     }else
       D_w = smam(w_n,M,m[i+1]) # calculate second moment about mean
     

@@ -10,7 +10,7 @@
 
 calc_M = function(d){
   M = 0
-  while(2^M < length(d))
+  while(2^M <= length(d))
     M = M+1
   M-1
 }
