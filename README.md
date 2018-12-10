@@ -7,7 +7,7 @@ To Install
 devtools::install_github("willdrysdale/wsdmiscr")
 ```
 
-An implementation of the Multiresolution Decomposition of a time series, using the methods presented in The Cospectral Gap and Turbulent Flux Calculations, Vickers and Marht 2003. https://doi.org/10.1175/1520-0426(2003)20<660:TCGATF>2.0.CO;2
+An implementation of the Multiresolution Decomposition of a time series, using the methods presented in The Cospectral Gap and Turbulent Flux Calculations, [Vickers and Marht 2003](https://doi.org/10.1175/1520-0426(2003)20<660:TCGATF>2.0.CO;2). 
 
 ```
 ## Reproduce example from Vickers and Marht 2003
