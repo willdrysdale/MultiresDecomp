@@ -3,6 +3,7 @@
 export(calc_M)
 export(group_vec)
 export(map_to_2M)
+export(mrd_and_summarise)
 export(multi_res_decomp)
 export(n_segs)
 export(read_ncsv)
